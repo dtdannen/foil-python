@@ -1,17 +1,17 @@
 import unittest
 import logging
-from trimlogic.test.helper import FoilTestCase
-from trimlogic.predicate import KnowledgeBase
-from trimlogic.predicate import RuleBasedPredicate
-from trimlogic.predicate import VariableFactory, UniqueVariableFactory
-from trimlogic.predicate import AtomFactory
-from trimlogic.foil import TrainingSet, construct_clause_recursive
-from trimlogic.foil import find_gainful_and_determinate_literals, foil
-from trimlogic.foil import find_partial_ordering_of_terms
-from trimlogic.foil import determine_param_orderings
-from trimlogic.algorithm import fol_bc_ask
-from trimlogic.term import Atom, Term
-from trimlogic.stdlib import components, dot, plist
+from src.trimlogic.test.helper import FoilTestCase
+from src.trimlogic.predicate import KnowledgeBase
+from src.trimlogic.predicate import RuleBasedPredicate
+from src.trimlogic.predicate import VariableFactory, UniqueVariableFactory
+from src.trimlogic.predicate import AtomFactory
+from src.trimlogic.foil import TrainingSet, construct_clause_recursive
+from src.trimlogic.foil import find_gainful_and_determinate_literals, foil
+from src.trimlogic.foil import find_partial_ordering_of_terms
+from src.trimlogic.foil import determine_param_orderings
+from src.trimlogic.algorithm import fol_bc_ask
+from src.trimlogic.term import Atom, Term
+from src.trimlogic.stdlib import components, dot, plist
 
 class ListTestCase(FoilTestCase):
   

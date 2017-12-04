@@ -1,12 +1,13 @@
-import logging
 import unittest
-from trimlogic.test.helper import FoilTestCase
-from trimlogic.predicate import KnowledgeBase
-from trimlogic.predicate import RuleBasedPredicate
-from trimlogic.predicate import VariableFactory, UniqueVariableFactory, AtomFactory
-from trimlogic.foil import TrainingSet, find_gainful_and_determinate_literals, construct_clause_recursive, foil, find_partial_ordering_of_terms, determine_param_orderings
-from trimlogic.algorithm import fol_bc_ask
-from trimlogic.term import Atom
+
+from src.trimlogic.predicate import KnowledgeBase
+from src.trimlogic.foil import foil, find_partial_ordering_of_terms, determine_param_orderings
+from src.trimlogic.predicate import RuleBasedPredicate
+from src.trimlogic.predicate import VariableFactory
+from src.trimlogic.term import Atom
+
+from helper import FoilTestCase
+
 
 class FamilyMemberFactory:
   
@@ -89,8 +90,8 @@ class FamilyTreeTestCase(FoilTestCase):
     self.kb.add_all([self.mother, self.father])
   
   def testFindRecursiveRules(self):
-    from trimlogic.predicate import Rule, MutableRule
-    from trimlogic.foil import will_halt
+    from src.trimlogic.predicate import Rule, MutableRule
+    from src.trimlogic.foil import will_halt
     v, a = self.v, self.a
     self.loadFamilyTree1()
     mother = self.mother
@@ -130,7 +131,6 @@ class FamilyTreeTestCase(FoilTestCase):
     self.print_rules(ancestor)
     
   def testGrandparent(self):
-    import sys
     v, a = self.v, self.a
     self.loadFamilyTree1()
     grandfather = RuleBasedPredicate('grandfather', (FamilyMember, FamilyMember))

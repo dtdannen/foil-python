@@ -8,6 +8,6 @@ setup(name='foil-python',
       author='Dustin Dannenhauer (Original Author: John Trimble)',
       author_email='dustin.td@gmail.com',
       install_requires=[],
-      packages=['trimlogic',
-                'trimlogic.test',
-                 ])
+      packages=['src',
+                'src.trimlogic',
+                'src.trimlogic.test',])

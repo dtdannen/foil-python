@@ -1,5 +1,5 @@
 import logging
-from trimlogic.term import *
+from src.trimlogic.term import *
 
 logger = logging.getLogger()
 
@@ -75,7 +75,7 @@ class RuleBasedPredicate(Predicate):
       self.arity = len(types)
     
   def _resolve(self, terms):
-    from trimlogic.algorithm import unify
+    from src.trimlogic.algorithm import unify
     logging.debug(str(self) + "._resolve( " + str(terms) + " ) ")
     for rule in self.rules:
       rule = rule.instantiate()
@@ -129,8 +129,7 @@ class NegationAsFailure(RuleBasedPredicate):
     """
     RuleBasedPredicate.__init__(self, 'neg')
     Goal = Var("Goal")
-    self.add_rule( Head=( Goal ),
-                  Rule=( Goal, cut, fail ) )
+    self.add_rule( Head=( Goal ), Rule=( Goal, cut, fail ) )
   
 class ListPredicate(RuleBasedPredicate):
   def __call__(self, *terms):
