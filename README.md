@@ -41,6 +41,20 @@ ancestor(X, Y) :- father(Z, Y), ancestor(X, Z).
 ancestor(X, Y) :- mother(Z, Y), ancestor(X, Z).
 ```
 
+## Install
+
+```
+cd src
+python setup.py install
+```
+
+If you plan to make changes to the code, use `develop` option instead, like:
+
+```
+cd src
+python setup.py develop
+```
+
 ## Test Cases
 ### Family Tree
 This test case demonstrates learning the `grandparent` and `ancestor` relations. Execute the following, from the project root:
